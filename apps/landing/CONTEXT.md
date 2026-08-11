@@ -2,6 +2,8 @@
 
 Public marketing site for **DTM ONES**, a basketball talent-representation agency. **Evaluators** primarily use the **Showcase** to inspect **Players**; the site also explains the agency (**About**) and accepts **Contact Requests**. Athletes seeking representation are a secondary audience. Public copy is **English-first** (international Evaluators).
 
+**Brand visual direction** stays consistent with Instagram `@dtm.ones` (bold, athletic, high-contrast, player-forward), with **parallax** as a preferred motion signature. See [DESIGN-BRIEF.md](./DESIGN-BRIEF.md).
+
 ## Language
 
 **DTM ONES**:
