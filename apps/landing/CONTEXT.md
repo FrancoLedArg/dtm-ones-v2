@@ -19,7 +19,7 @@ A basketball athlete currently represented by DTM ONES and presented on the Show
 _Avoid_: Athlete, talent, prospect, client
 
 **DTM Legend**:
-An iconic athlete who was part of DTM ONES at some point and is featured as a Legend (route `/legends`; Home teaser optional until Home IA is locked). Profile depth is lighter than a Player for now (photo, name, years with DTM, short blurb, optional highlight) unless we explicitly bump it.
+An iconic athlete who was part of DTM ONES at some point and is featured as a Legend (route `/legends`; Home includes a Legends teaser that links there — see #4). Profile depth is lighter than a Player for now (photo, name, years with DTM, short blurb, optional highlight) unless we explicitly bump it.
 _Avoid_: Alumni, hall of fame, former player (as section/brand language — prefer DTM Legend / DTM LEGENDS)
 
 **Showcase**:
