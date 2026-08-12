@@ -1,8 +1,8 @@
 # Landing
 
-Public marketing site for **DTM ONES**, a basketball talent-representation agency. **Evaluators** primarily use the **Showcase** to inspect **Players**; the site also explains the agency (**About**) and accepts **Contact Requests**. Athletes seeking representation are a secondary audience. Public copy is **English-first** (international Evaluators).
+Public **roster tool** for **DTM ONES**, a basketball talent-representation agency. **Evaluators** primarily use the **Showcase** to **find and inspect** roster entries (**Players** and **Coaches**) among a full roster (~200); the site also explains the agency (**About**) and accepts **Contact Requests**. Athletes seeking representation are a secondary audience. Public copy is **English-first** (international Evaluators). Arrival is roughly split: deep link to a known roster entry vs self-serve roster find.
 
-**Brand visual direction** stays consistent with Instagram `@dtm.ones` (bold, athletic, high-contrast, player-forward), with **parallax** as a preferred motion signature. See [DESIGN-BRIEF.md](./DESIGN-BRIEF.md).
+**Home is the Showcase** — find UI (name search + **Category** filter + **compact** result cards for **Players** and **Coaches** in one grid), plus a thin legitimacy strip (**License** marks). Detail pages use the **signing poster**. **Contact Request** stays talk-to-us only; reason label `Looking for a player` unchanged for now. **Category** labels are Dashboard/CMS-owned (exactly one per entry).
 
 ## Language
 
@@ -11,23 +11,39 @@ The basketball talent-representation agency this site represents.
 _Avoid_: DTM Ones, DTM One's, the agency (when the brand name is meant)
 
 **Evaluator**:
-A club, coach, scout, or other visitor assessing Players on the Showcase (often via a link shared by the agency).
-_Avoid_: Buyer, customer, user, visitor (when this role is meant)
+A club staffer, visiting coach, scout, or other visitor assessing roster entries on the Showcase (often via a link shared by the agency).
+_Avoid_: Buyer, customer, user, visitor (when this role is meant); do not confuse with **Coach** (a represented roster entry)
 
 **Player**:
 A basketball athlete currently represented by DTM ONES and presented on the Showcase for Evaluators.
 _Avoid_: Athlete, talent, prospect, client
 
+**Coach**:
+A basketball coach currently represented by DTM ONES and shown in the **same Showcase grid** as Players. Distinguished by **Category** (e.g. a “Coaches” label the agency defines in Dashboard), not by a separate Landing section. Detail page uses the same shape as **Player** (signing-poster hero + comparable modules).
+_Avoid_: Evaluator, staff, trainer (when a represented Coach is meant)
+
 **DTM Legend**:
-An iconic athlete who was part of DTM ONES at some point and is featured as a Legend (route `/legends`; Home includes a Legends teaser that links there — see #4). Profile depth is lighter than a Player for now (photo, name, years with DTM, short blurb, optional highlight) unless we explicitly bump it.
+An iconic athlete who was part of DTM ONES at some point and is featured as a Legend (route `/legends`). Profile depth is lighter than a Player for now (photo, name, years with DTM, short blurb, optional highlight) unless we explicitly bump it. Not part of the Home find grid.
 _Avoid_: Alumni, hall of fame, former player (as section/brand language — prefer DTM Legend / DTM LEGENDS)
 
 **Showcase**:
-The primary use of the landing — browsing and inspecting current Players (Legends are separate).
-_Avoid_: Catalog, gallery, portfolio
+The primary work surface of the landing — and **what Home is**. Finding and inspecting current roster entries (**Players** and **Coaches**): name search when known; **Category** filter when the need is a bucket (e.g. “I need a pivot”). Home results use **compact cards** (photo, bold name, Category chip, DTM athletic look). The **signing poster** belongs on the detail page, not in the Home grid. Legends are separate (`/legends`).
+_Avoid_: Catalog, gallery, portfolio, browse-only feed, marketing strip of featured entries, mini full posters in the Home grid
+
+**Compact card**:
+A small, scannable Showcase result tile: photo/cutout, name, Category — brand-consistent but not a full signing layout. Optimized so many roster entries fit on screen.
+_Avoid_: Poster, signing graphic (when the Home tile is meant)
+
+**Signing poster**:
+The full Instagram-style composition for one roster entry (massive type, layered cutout, club accent, stat bar, lockups). Used on the detail page.
+_Avoid_: Card, tile (when the full detail hero is meant)
+
+**Category**:
+A Dashboard/CMS-owned label; each Showcase roster entry has **exactly one**. Used as the v1 filter facet (alongside name search). May name on-court roles (e.g. pivot) or other agency buckets (e.g. coaches) — Landing does not hardcode the set. Height, nationality, and last club remain profile facts in v1, not find facets.
+_Avoid_: Position (as a Landing-owned enum), tag, role, spot (when this filter facet is meant)
 
 **Contact Request**:
-A visitor’s ask to hear from DTM ONES via the site-wide `/contact` path only. Fields: **reason** (`Seeking representation` | `Looking for a player`), **email**, **phone**, **message** — no name field. *Looking for a player* is intent wording only (recruiting / need a player); the form has no Player picker and must not collect a Player name/slug. The agency owns which Players enter negotiation.
+A visitor’s ask to hear from DTM ONES via the site-wide `/contact` path only. Fields: **reason** (`Seeking representation` | `Looking for a player`), **email**, **phone**, **message** — no name field. *Looking for a player* stays as-is for now even though Coaches exist on Showcase; coach needs go in the message. The form has no roster picker and must not collect a Player/Coach name/slug. The agency owns who enters negotiation.
 _Avoid_: Lead, inquiry, ticket, form submission, player interest, “I like this player”
 
 **About**:
