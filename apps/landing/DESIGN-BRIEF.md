@@ -1,41 +1,54 @@
-# Design brief — Landing (tasteskill v2)
+# Design brief — Landing (roster tool)
 
-Source of design rules: **design-taste-frontend** (tasteskill v2 experimental) only.
+Source of design rules: **design-taste-frontend** (tasteskill v2 experimental) only, applied *after* this product brief. Domain language: [CONTEXT.md](./CONTEXT.md). Decision record: [ADR 0002](../../docs/adr/0002-home-is-showcase-find-tool.md). Supersedes the marketing-scroll / small-roster reading of [#2](https://github.com/FrancoLedArg/dtm-ones-v2/issues/2) and [#4](https://github.com/FrancoLedArg/dtm-ones-v2/issues/4).
 
-Locked decision: Landing brand must **stay consistent with Instagram** (`@dtm.ones`). Visual language follows the existing signing/graphics system, not a quieter SaaS/agency default. Feeds [#2](https://github.com/FrancoLedArg/dtm-ones-v2/issues/2) and unblocks Home IA ([#4](https://github.com/FrancoLedArg/dtm-ones-v2/issues/4)).
+## Product
 
-## Brief
-
-- **Page kind:** landing
-- **Product:** DTM ONES — basketball talent-representation agency; public Landing is Showcase-first for Evaluators
+- **Page kind:** roster tool (public Landing), not a small marketing brochure
+- **Product:** DTM ONES — basketball talent-representation agency
+- **Primary job:** Evaluators **find and inspect** roster entries (**Players** and **Coaches**) among ~**200** entries
 - **Audience:** international Evaluators (clubs, coaches, scouts) — serious, time-poor, legitimacy-seeking; athletes seeking representation are secondary
-- **Vibe words:** bold, athletic, high-contrast, player-forward
-- **References:** Instagram `@dtm.ones` signing graphics (local captures in `apps/landing/assets/image_1.jpeg` … `image_5.jpeg`); peer anchors Nike Basketball / EuroLeague-style athlete posters
-- **Motion:** agency owner wants **parallax** as a real brand motion signature (layered scroll depth on heroes / player cutouts / section backgrounds). Prefer intentional parallax over generic micro-bounce; respect `prefers-reduced-motion`
-- **Avoid:** AI-purple gradients; Inter + slate SaaS look; warm cream + terracotta “premium” default; soft pastels; thin delicate serifs; three equal feature cards; glassmorphism everywhere; fake startup jargon (“unlock talent platform”); motion for its own sake without parallax depth
+- **Arrival:** ~50/50 deep link to a known entry vs self-serve find on Home
+- **Vibe words:** bold, athletic, high-contrast, find-efficient
+- **References:** Instagram `@dtm.ones` signing graphics (`apps/landing/assets/image_1.jpeg` … `image_5.jpeg`) for **detail** posters; Nike Basketball / EuroLeague athlete posters as peer anchors
+- **Avoid:** AI-purple gradients; Inter + slate SaaS look; warm cream + terracotta “premium” default; soft pastels; thin delicate serifs; three equal feature cards; glassmorphism everywhere; fake startup jargon; treating Home as a feed of full signing posters; featuring a single preferred Player in the first viewport
 
-## Instagram signals (captured)
+## Home = Showcase (find UI)
 
-Repeatable poster system observed across assets:
+Home **is** the Showcase work surface:
 
-- Massive bold white sans display (“FIRMADO”) with layered depth (type behind cutout player)
-- Player cutout as hero subject; club palette drives each piece (maroon/green, red, black/yellow, forest green)
-- Script accent for surname; slanted/black stat chips (position + height)
+1. **Name search** — when the Evaluator already knows who
+2. **Category filter** — when the need is a bucket (owner pattern: “I need a pivot”). **Category** is Dashboard/CMS-owned; exactly one per entry; Landing does not hardcode labels (may include coach buckets)
+3. **Compact card grid** — photo/cutout, bold name, Category chip; DTM athletic look; many results visible per viewport
+4. **Thin License strip** — FIBA / JBA marks for legitimacy; must not displace find chrome
+5. **One grid** — Players and Coaches together; Category distinguishes them
+6. **Out of Home** — full Legends roster (`/legends`); About; Contact
+
+**Not on Home:** marketing hero with a featured Player; Legends teaser as a peer section; sequenced “poster feed” of the whole roster; mini full signing posters in the grid.
+
+## Detail = signing poster
+
+`/players/[slug]` (and the same shape for Coaches): **signing poster** hero adapted for web — massive type, layered cutout, club/local accent, stat chips, lockups — plus modules per [#3](https://github.com/FrancoLedArg/dtm-ones-v2/issues/3). Coach detail matches Player depth.
+
+## Contact
+
+Unchanged for now: `/contact` talk-to-us only; reasons include `Looking for a player` (coach needs go in the message). No roster picker. Showcase is the find tool; Contact is not a second filter UI.
+
+## Motion
+
+Parallax remains a preferred brand signature on **detail / layered poster** surfaces. Do **not** prioritize parallax on the Home find grid until find UX is solid. Honor `prefers-reduced-motion`.
+
+## Instagram signals (still true for posters)
+
+Repeatable poster system for **detail** pages:
+
+- Massive bold white sans display with layered depth (type behind cutout)
+- Cutout as hero subject; club palette may drive each piece
+- Script accent for surname; slanted/black stat chips
 - Footer lockup: league/federation marks + DTM ONES logo
-- High contrast, athletic impact, mobile-first composition
+- High contrast, athletic impact
 
-Public site copy remains **English-first** per `CONTEXT.md`; Instagram may stay Spanish for social — brand *visuals* sync, language follows glossary.
-
-## Structure implications (for Home IA / #4)
-
-What Instagram rhythm suggests for Landing Home (still to settle on #4):
-
-1. **Player-forward first viewport** — cutout/athlete hero, not agency prose; brand name as hero-level signal beside or over the player plane.
-2. **Showcase as the spine** — Home should emphasize browsing/inspecting Players the way the feed emphasizes signed athletes; Legends can teaser later but should not outrank active roster.
-3. **Poster-like section rhythm** — high-impact type + layered depth + stat chips; sections should feel like sequenced posters, not equal SaaS feature cards.
-4. **Parallax depth between layers** — background wash / oversized type / player cutout / foreground UI should move at different rates on scroll.
-5. **Club/league color as local accent** — per-Player pieces may borrow jersey/club color; global chrome stays DTM-consistent (dark, high-contrast, bold sans).
-6. **Proof strip without softening** — FIBA/JBA License marks can sit like the Instagram footer lockups (small, official), not as soft partner logos.
+Public site copy remains **English-first** per `CONTEXT.md`; Instagram may stay Spanish for social — brand *visuals* sync on detail, find UX owns Home.
 
 ## Prompt block (paste into tasteskill)
 
@@ -43,23 +56,25 @@ What Instagram rhythm suggests for Landing Home (still to settle on #4):
 I have loaded tasteskill v2 (experimental) as my only source of design rules.
 
 Brief:
-- Page kind: landing
-- Product: DTM ONES — basketball talent-representation agency; public Landing is Showcase-first for Evaluators
-- Audience: international Evaluators (clubs, coaches, scouts) — serious, time-poor, legitimacy-seeking; athletes seeking representation are secondary
-- Vibe words: bold, athletic, high-contrast, player-forward
-- References: Instagram @dtm.ones signing graphics (apps/landing/assets/image_1–5.jpeg); Nike Basketball / EuroLeague-style athlete posters
-- Motion: parallax as brand signature (layered scroll depth on heroes / player cutouts / section backgrounds); honor prefers-reduced-motion
-- Avoid: AI-purple gradients; Inter + slate SaaS look; warm cream + terracotta “premium” default; soft pastels; thin delicate serifs; three equal feature cards; glassmorphism everywhere; fake startup jargon (“unlock talent platform”); motion without parallax depth
+- Page kind: roster-tool landing (Home IS the Showcase find UI)
+- Product: DTM ONES — basketball talent-representation agency; ~200 Players + Coaches
+- Audience: international Evaluators — find-efficiency first
+- Home: name search + Category filter + compact card grid + thin License strip; no featured-Player hero; no full signing posters in the grid
+- Detail: Instagram @dtm.ones signing-poster hero + profile modules
+- Category: Dashboard-owned labels, exactly one per entry (includes coach buckets)
+- References: Instagram signing graphics for detail only; compact athletic cards on Home
+- Motion: parallax on detail/poster layers later; not required on Home find grid yet
+- Avoid: AI-purple; Inter+slate SaaS; cream+terracotta default; equal feature cards; glassmorphism; featured Player preference on Home; mini full posters in the Home grid
 
 Step 1. Declare your design read in one sentence and the three dial values with one-line reasoning each. Stop.
 
-Step 2 (after my OK). Ship a single Next.js page with at least 8 sections. Pick the sections that actually fit the product. At least 4 different layout families across the page. Use real images (gen-tool first, then Picsum-seed). Lock one theme for the whole page.
+Step 2 (after my OK). Ship Home as the find UI (search + Category + compact cards + License strip) and a Player detail with signing-poster hero. Use real images (gen-tool first, then Picsum-seed). Lock one theme for the whole site.
 
 Step 3. Run in writing:
 - Em-dash audit (zero em-dashes U+2014 or en-dashes U+2013 anywhere)
 - Pre-Flight Check (Section 14, every box marked Pass or Fail with one-line justification)
 - Section-Layout-Repetition audit (list each section's layout family)
-- Hero discipline audit (headline lines, subtext words, CTA visibility)
+- Find-efficiency audit (can an Evaluator filter to a Category and scan results without a marketing scroll?)
 
 Any Fail blocks completion.
 ```
