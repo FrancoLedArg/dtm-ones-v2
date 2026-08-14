@@ -2,7 +2,7 @@
 
 Public **roster tool** for **DTM ONES**, a basketball talent-representation agency. **Evaluators** primarily use the **Showcase** to **find and inspect** roster entries (**Players** and **Coaches**) among a full roster (~200); the site also explains the agency (**About**) and accepts **Contact Requests**. Athletes seeking representation are a secondary audience. Public copy is **English-first** (international Evaluators). Arrival is roughly split: deep link to a known roster entry vs self-serve roster find.
 
-**Home is the Showcase** — find UI (name search + **Category** filter + **compact** result cards for **Players** and **Coaches** in one grid), plus a thin legitimacy strip (**License** marks). Detail pages use the **signing poster**. **Contact Request** stays talk-to-us only; reason label `Looking for a player` unchanged for now. **Category** labels are Dashboard/CMS-owned (exactly one per entry).
+**Home is the Showcase** — find UI (name search + **Category** filter + match count + **compact** result cards for **Players** and **Coaches** in one grid), plus a thin legitimacy strip (**License** marks). Detail pages use the **signing poster**. **Contact Request** stays talk-to-us only; reason label `Looking for a player` unchanged for now. **Category** labels are Dashboard/CMS-owned (exactly one per entry).
 
 ## Language
 
@@ -27,15 +27,15 @@ An iconic athlete who was part of DTM ONES at some point and is featured as a Le
 _Avoid_: Alumni, hall of fame, former player (as section/brand language — prefer DTM Legend / DTM LEGENDS)
 
 **Showcase**:
-The primary work surface of the landing — and **what Home is**. Finding and inspecting current roster entries (**Players** and **Coaches**): name search when known; **Category** filter when the need is a bucket (e.g. “I need a pivot”). Home results use **compact cards** (photo, bold name, Category chip, DTM athletic look). The **signing poster** belongs on the detail page, not in the Home grid. Legends are separate (`/legends`).
+The primary work surface of the landing, and **what Home is**: name search, one **Category** filter, a count of matching roster entries, **compact cards** for **Players** and **Coaches** in one grid, and a thin **License** strip. The **signing poster** belongs on the detail page; **DTM Legends** are on `/legends`.
 _Avoid_: Catalog, gallery, portfolio, browse-only feed, marketing strip of featured entries, mini full posters in the Home grid
 
 **Compact card**:
-A small, scannable Showcase result tile: photo/cutout, name, Category — brand-consistent but not a full signing layout. Optimized so many roster entries fit on screen.
+A small Showcase result tile: the photo the agency stores on top, name and **Category** under the photo, on the DTM ONES field (not club colors). Not a **signing poster**. Sized so many roster entries fit on screen.
 _Avoid_: Poster, signing graphic (when the Home tile is meant)
 
 **Signing poster**:
-The full Instagram-style composition for one roster entry (massive type, layered cutout, club accent, stat bar, lockups). Used on the detail page.
+The full Instagram-style composition for one roster entry (massive type, layered cutout, that entry’s club colors, stat bar, lockups) on the detail page. Club colors live here, not on the **compact card**.
 _Avoid_: Card, tile (when the full detail hero is meant)
 
 **Category**:
